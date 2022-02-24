@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            text-align: center;
+            font-size: 10vw;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="icon" href="./static/icon.ico" sizes="32*32">
+    <script>
+        function showImg(file){
+            var reader = new FileReader();
+            reader.onload = function (evt){
+                document.getElementById('myImage').src = evt.target.result;
+            }
+            reader.readAsDataURL(file.files[0])
+        }
+    </script>
+</head>
+<body>
+<p> <br></p>
+(｡･∀･)ﾉﾞ
+    <form method="post" action="/upload"
+                                enctype="multipart/form-data"
+                                style="font-size: 5vw;
+                                    font-weight: bold">
+        👇👇👇输入学号姓名👇👇👇
+        <br>
+        <input type="text" name="id" style=" border-width: 2px; border-style: solid; width: 24vw; height: 3vw;">
+        <br><br><br>
+            ↓↓↓选择行程轨迹图↓↓↓
+        <br>
+        <input type="file" name="myImg" onchange="showImg(this)" style="font-family: 微软雅黑;
+            width: 14vw;
+            height: 4vw;
+            font-size: 1.5vw;
+            font-weight: bold;
+            "><p style="font-weight: normal;font-size: medium">（若没反应就再点一下）</p>
+        <br>
+        <input type="submit" value="就这样,提交√" style="color: red;
+            font-family: 微软雅黑;
+            font-size: 2vw;
+            font-weight: bold;
+            border-radius: 5px;
+            border: red 2px solid;
+            width: 25vw;
+            height: 7vw;
+            ">
+    </form>
+    <br>
+    <img id="myImage">
+</body>
+</html>
